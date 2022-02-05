@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:StreamTools.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="500"
+		Width="300"
+		Height="500"
+        x:Class="StreamTools.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="StreamTools">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<StackPanel Margin="10" Orientation="Vertical" Spacing="10" VerticalAlignment="Center">
+		<Image Source="/Assets/avalonia-logo.ico" Width="100" Height="100"/>
+		<TextBox Text="{Binding OAuthToken}" PasswordChar="*" Watermark="OAuth Token"/>
+		<TextBox Text="{Binding Username}" Watermark="Username"/>
+		<TextBox Text="{Binding Channel}" Watermark="Channel to Join "/>
+		<Button Command="{Binding AuthAndConnect}">Auth and Join</Button>
+	</StackPanel>
+
+</Window>
